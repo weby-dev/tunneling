@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum App</title>
+</head>
+<body>
+  <h2>Add Two Numbers</h2>
+  <form id="sumForm">
+    <input type="number" name="a" placeholder="First number" required>
+    <input type="number" name="b" placeholder="Second number" required>
+    <button type="submit">Add</button>
+  </form>
+  <p>Result: <span id="result"></span></p>
+
+  <script>
+    document.getElementById('sumForm').addEventListener('submit', async function(e) {
+      e.preventDefault()
+      const form = e.target
+      const formData = new URLSearchParams(new FormData(form))
+
+      const res = await fetch('/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData
+      })
+
+      const text = await res.text()
+      document.getElementById('result').textContent = text
+    })
+  </script>
+</body>
+</html>
