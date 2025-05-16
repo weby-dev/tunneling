@@ -10,19 +10,16 @@ A basic Node.js + Express application with a frontend that takes two numbers as 
 
 ## 📁 Project Structure
 
-sum-app/
-├── public/
-│ └── index.html
-├── server.js
-├── package.json
-└── README.md
-
+- `server.js` – Express server
+- `package.json` – Project metadata and dependencies
+- `public/`
+  - `index.html` – Frontend form
 
 ## 🚀 How to Run
 
-1. **Clone or download the project**
+1. Clone or download the project
 
-2. **Install dependencies**
+2. Install dependencies
 
 ```bash
 npm install
